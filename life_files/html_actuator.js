@@ -64,9 +64,9 @@ HTMLActuator.prototype.addTile = function (tile) {
   text[9] = "二草"
   text[10] = "正草"
   text[11] = "正图"
-  text[12] = "42"
-  text[13] = "42"
-  text[14] = "42"
+  text[12] = "甲方"
+  text[13] = "规划"
+  text[14] = "政府"
   var self = this;
   var text2 = function (n) { var r = 0; while (n > 1) r++, n >>= 1; return r; }
 
@@ -78,7 +78,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
-  if (tile.value > 2048) classes.push("tile-super");
+  if (tile.value > 8194) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
 
@@ -146,7 +146,7 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 };
 
 HTMLActuator.prototype.message = function (won) {
-  var mytxt=new Array(9);
+  var mytxt=new Array(11);
   mytxt[0]="完全没有构思";
   mytxt[1]="脑子里都是浆糊";
   mytxt[2]="构思被狗吃了！";
@@ -156,6 +156,8 @@ HTMLActuator.prototype.message = function (won) {
   mytxt[6]="猝死了！";
   mytxt[7]="二草被毙了";
   mytxt[8]="出不了正图了我擦";
+  mytxt[9]="甲方说还要改！";
+  mytxt[10]="没通过规划的审核";
 
 
   var text3 = function (m) { var r = 0; while (m > 1) r++, m >>= 1; return r; }
